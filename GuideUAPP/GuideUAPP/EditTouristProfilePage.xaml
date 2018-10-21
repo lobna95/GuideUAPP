@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              NavigationPage.HasBackButton="True"
+             x:Class="GuideUAPP.EditTouristProfilePage">
+    <ContentPage.Content>
+
+        <Grid >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+
+            </Grid.RowDefinitions>
+
+            <Image x:Name="ImgControl" Grid.Row="0"  HorizontalOptions="Center" VerticalOptions="Center"  />
+
+            <StackLayout Grid.Row="1" >
+                <Entry Placeholder="First Name"  HorizontalOptions="Center"   FontSize="25"  />
+                <Entry Placeholder="Last Name "  HorizontalOptions="Center"   FontSize="25"  />
+                <Entry Placeholder="Phone num"  HorizontalOptions="Center"   FontSize="25"  />
+                <Entry Placeholder="email"  HorizontalOptions="Center"   FontSize="25"  />
+            </StackLayout>
+
+
+            <Button x:FieldModifier="push" Text="Save" Grid.Row="2"  FontSize="20" WidthRequest="200" HeightRequest="40"
+                   TextColor="#FF1076DC" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="#FFFFE7A6" CornerRadius="10"   />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

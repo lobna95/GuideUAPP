@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:local="clr-namespace:GuideUAPP;assembly=GuideUAPP"
+              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:local1="clr-namespace:GuideUAPP.Behaviors"
+              NavigationPage.HasBackButton="True"
+             xmlns:local2="clr-namespace:GuideUAPP"
+             x:Class="GuideUAPP.TGHistory">
+    <ContentPage.Content>
+
+        <Grid>
+
+
+            <Grid x:Name="TGHistoryGrid">
+                <ListView  x:Name="listView" ItemSelected="listView_ItemSelected" RowHeight="80" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="White">
+                                    <controls:CircleImage Source="{Binding TGPP}" HorizontalOptions="Start" WidthRequest="50" HeightRequest="50" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                                    <StackLayout Orientation="Vertical">
+
+                                <Label Text = "{Binding TGName}" FontSize="16" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
+                                <Image Source="{Binding Rating}" HorizontalOptions="Start" WidthRequest="100" HeightRequest="40"></Image>
+                            </StackLayout>
+                           
+
+
+                        </StackLayout>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+
+
+
+        </ListView>
+            </Grid>
+
+            <Grid x:Name="TGTripDetailsPopUp" BackgroundColor="#99999191" IsVisible="False"
+                  ColumnSpacing="0" RowSpacing="0"
+              >
+
+
+                <Grid BackgroundColor="White" HeightRequest="300" WidthRequest="400"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                  
+
+                    <StackLayout Orientation="Vertical">
+                        <Label x:Name="closePopup" Text="&#xf00d;" WidthRequest="20" HeightRequest="20"
+                           VerticalOptions="Center" FontSize="Small"  HorizontalOptions="Start" TextColor="Black">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClosePopoUpTap_Tapped"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String"
+                            Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                            iOS="Font Awesome 5 Free" 
+                            WinPhone="Assets/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free" />
+                            </Label.FontFamily>
+                        </Label>
+                        <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Your tour in " FontSize="24"></Label>
+                        <Label x:Name="PlaceName" FontSize="24"></Label>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                    <controls:CircleImage x:Name="TGImage" HeightRequest="100" WidthRequest="100"></controls:CircleImage>
+                        <StackLayout Orientation="Vertical">
+                    <Label x:Name="TGName"  FontSize="20"></Label>
+                    <Label  x:Name="TourDate" FontSize="16"></Label>
+                     <Image  x:Name="TourRating"></Image>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                   
+
+                </StackLayout>
+                </Grid>
+
+
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

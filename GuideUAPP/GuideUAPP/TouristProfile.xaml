@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="GuideUAPP.TouristProfile">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="22*"/>
+            </Grid.RowDefinitions>
+
+            <controls:CircleImage x:Name="ImgControl" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"   />
+
+            <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+                <Label x:Name="fullName"  HorizontalOptions="Center"   FontSize="25"  />
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">
+                    <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Text="Phone Number:"  HorizontalOptions="Center"/>
+                    <Label  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" x:Name="number"  HorizontalOptions="Center" />
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5">
+                    <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="Email:"  HorizontalOptions="Center"/>
+                    <Label  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" x:Name="email"  HorizontalOptions="Center"/>
+
+                </StackLayout>
+
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3">
+                <Button x:FieldModifier="push" Text="Change password" Grid.Row="6" Grid.Column="1" BackgroundColor="#FFFFE7A6"   Clicked="ChangePassword_Clicked"  />
+                <Button x:FieldModifier="push" Text="Edit profile" Grid.Row="6" Grid.Column="3" BackgroundColor="#FFFFE7A6" Clicked="EditProfile_Clicked"  />
+            </StackLayout>
+        </Grid>
+            
+            
+        <!--change password popup-->
+    <Grid x:Name="changePasswordpopup" BackgroundColor="#99FFFFFF" IsVisible="False"
+                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0"
+              WidthRequest="300" HeightRequest="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.RowSpan="2" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+
+
+                    <!-- Begin Header -->
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                             Spacing="0" BackgroundColor="Transparent" HeightRequest="20" Grid.Column="0" Grid.Row="1">
+                        <StackLayout.Padding>
+                            <OnPlatform x:TypeArguments="Thickness"
+                            iOS="10, 10, 10, 10"
+                            Android="10, 10, 10, 10"
+                            WinPhone="10, 10, 10, 10" />
+                        </StackLayout.Padding>
+                        <!-- My header content -->
+                        
+                        <Label x:Name="closePopup" Text="&#xf00d;" WidthRequest="20" HeightRequest="20"
+                           VerticalOptions="Center" FontSize="Small"  HorizontalOptions="Start" TextColor="Black">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClosePopoUpTap_Tapped"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String"
+                            Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                            iOS="Font Awesome 5 Free" 
+                            WinPhone="Assets/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free" />
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                    <!-- End Header -->
+                    
+                    <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30*"/>
+                        <ColumnDefinition Width="70*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+
+                        <StackLayout  Orientation="Vertical" Grid.Row="3" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="3">
+                            <Entry Placeholder="Old password" x:Name="old"  HorizontalOptions="Center" TextColor="#FF1076DC"/>
+                            <Entry Placeholder="New password " x:Name="PasswordText"  HorizontalOptions="Center" TextColor="#FF1076DC"/>
+                            <Entry Placeholder="confirm password" x:Name="ConfirmPasswordText" HorizontalOptions="Center" TextColor="#FF1076DC"/>
+                </StackLayout>
+
+                <Button x:Name="Changepassword" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Text="Change Password"
+                BackgroundColor="#FFFFE7A6" TextColor="#FF1076DC" HorizontalOptions="Center"
+                VerticalOptions="Center" CornerRadius="10" WidthRequest="200" HeightRequest="40"
+                Clicked="Button_Clicked"></Button>
+               </StackLayout>
+
+        </StackLayout>
+
+            </Grid>
+
+            <!--Edit profile popup-->
+            <Grid x:Name="editProfilepopup" BackgroundColor="#99FFFFFF" IsVisible="False"
+                  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0" RowSpacing="0"
+              WidthRequest="300" HeightRequest="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="90*"/>
+                </Grid.RowDefinitions>
+
+
+
+                <StackLayout Grid.Row="0" Grid.RowSpan="2" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+
+
+                    <!-- Begin Header -->
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                             Spacing="0" BackgroundColor="Transparent" HeightRequest="20" Grid.Column="0" Grid.Row="1">
+                        <StackLayout.Padding>
+                            <OnPlatform x:TypeArguments="Thickness"
+                            iOS="10, 10, 10, 10"
+                            Android="10, 10, 10, 10"
+                            WinPhone="10, 10, 10, 10" />
+                        </StackLayout.Padding>
+                        <!-- My header content -->
+                        <Label x:Name="closePopup1" Text="&#xf00d;" WidthRequest="20" HeightRequest="20"
+                           VerticalOptions="Center" FontSize="Small"  HorizontalOptions="Start" TextColor="Black">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ClosePopoUp1Tap_Tapped"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String"
+                            Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                            iOS="Font Awesome 5 Free" 
+                            WinPhone="Assets/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free" />
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                    <!-- End Header -->
+
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="70*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="10*"/>
+                                <RowDefinition Height="5*"/>
+                                <RowDefinition Height="10*"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+
+                        <StackLayout  Orientation="Vertical" Grid.Row="3" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="3">
+                            <Entry Placeholder="First Name" x:Name="FName"  HorizontalOptions="Center" TextColor="#FF1076DC"/>
+                            <Entry Placeholder="Last Name" x:Name="LName"  HorizontalOptions="Center" TextColor="#FF1076DC"/>
+                            <Entry Placeholder="Phone Number" x:Name="PhoneNumberText" Keyboard="Numeric"  HorizontalOptions="Center" TextColor="#FF1076DC"/>
+                            <Entry Placeholder="Email" x:Name="EmailText"  HorizontalOptions="Center" TextColor="#FF1076DC"/>
+                        </StackLayout>
+
+                        <Button x:Name="editProfile" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Text="Edit Profile"
+                BackgroundColor="#FFFFE7A6" TextColor="#FF1076DC" HorizontalOptions="Center"
+                VerticalOptions="Center" CornerRadius="10" WidthRequest="200" HeightRequest="40"
+                Clicked="editProfile_Clicked_1"></Button>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -1,0 +1,112 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\bestlogo.png" />
+    <None Remove="Assets\cvv.png" />
+    <None Remove="Assets\entertainmentplaces.png" />
+    <None Remove="Assets\fbicon.png" />
+    <None Remove="Assets\googleicon.png" />
+    <None Remove="Assets\logo.png" />
+    <None Remove="Assets\man.m4a" />
+    <None Remove="Assets\musem.png" />
+    <None Remove="Assets\musemaudio.mp3" />
+    <None Remove="Assets\pin.png" />
+    <None Remove="Assets\places.png" />
+    <None Remove="Assets\pp.png" />
+    <None Remove="Assets\profile.png" />
+    <None Remove="Assets\restaurant.png" />
+    <None Remove="Assets\search.png" />
+    <None Remove="Assets\star_outline.png" />
+    <None Remove="Assets\star_selected.png" />
+    <None Remove="Assets\tg.png" />
+    <None Remove="Assets\tgicon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\bestlogo.png" />
+    <EmbeddedResource Include="Assets\cvv.png" />
+    <EmbeddedResource Include="Assets\entertainmentplaces.png" />
+    <EmbeddedResource Include="Assets\fbicon.png" />
+    <EmbeddedResource Include="Assets\googleicon.png" />
+    <EmbeddedResource Include="Assets\logo.png" />
+    <EmbeddedResource Include="Assets\man.m4a" />
+    <EmbeddedResource Include="Assets\musem.png" />
+    <EmbeddedResource Include="Assets\musemaudio.mp3" />
+    <EmbeddedResource Include="Assets\pin.png" />
+    <EmbeddedResource Include="Assets\places.png" />
+    <EmbeddedResource Include="Assets\pp.png" />
+    <EmbeddedResource Include="Assets\profile.png" />
+    <EmbeddedResource Include="Assets\restaurant.png" />
+    <EmbeddedResource Include="Assets\search.png" />
+    <EmbeddedResource Include="Assets\star_outline.png" />
+    <EmbeddedResource Include="Assets\star_selected.png" />
+    <EmbeddedResource Include="Assets\tg.png" />
+    <EmbeddedResource Include="Assets\tgicon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreshMvvm" Version="2.2.4" />
+    <PackageReference Include="Humanizer" Version="2.5.1" />
+    <PackageReference Include="InTheHand.Forms" Version="1.0.2018.828" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Plugin.Share" Version="7.1.1" />
+    <PackageReference Include="Plugin.Youtube" Version="1.0.1" />
+    <PackageReference Include="PropertyChanged.Fody" Version="2.5.13" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Xam.Plugin.SimpleAudioPlayer" Version="1.1.0" />
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.0.0.5" />
+    <PackageReference Include="Xamarin.Forms" Version="3.2.0.871581" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.2.0.871581" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AboutUsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="gotoMap.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainServicePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MapPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="PaymentMethodPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="RegistrationPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ReservedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SigninPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TGReservations.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TouristicPlacePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TouristProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="YouTubeChannelPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
+</Project>

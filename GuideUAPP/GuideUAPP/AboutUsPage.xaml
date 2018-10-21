@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              
+              NavigationPage.HasBackButton="True"
+             x:Class="GuideUAPP.AboutUsPage">
+    <TabbedPage.Children>
+
+        <ContentPage Title="Our Moto" BackgroundColor="#FFFEE187">
+
+            <!--   <c:CircleImage Source="Assets/tourismm.PNG">
+
+            </c:CircleImage>
+            -->
+            <Label Margin="5,0,0,5" Text="Help descreasing the dependency on international tourism by providing a quick and easy way for Egyptians to explore their country and provide them with a tour guide that will help them know more about Egypt and it's magic"
+                   HorizontalOptions="Center" VerticalOptions="Center" ></Label>
+
+
+        </ContentPage>
+        <ContentPage Title="Vision" BackgroundColor="#FFE03A00">
+            <Label Margin="0,5,5,0"  Text="We envision covering touristic places all over Egypt, getting every Egyptian citizen to know at least the nearest touristic places around him."
+                    HorizontalOptions="Center" VerticalOptions="Center" ></Label>
+        </ContentPage>
+        <ContentPage Title="Mission" BackgroundColor="#FF940030">
+            <Label Text="Improving awareness of Egyptians about domestic tourism, by covering all touristic places in each city within Egypt and gather tour guides according to a certain criterion."
+                   HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        </ContentPage>
+        <ContentPage Title="ContactUs" BackgroundColor="#FFFFC61B">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" >
+                <Label Text="Contact us" HorizontalOptions="Center" VerticalOptions="Start"></Label>
+                <Label Text="guide-u@example.com" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </StackLayout>
+
+        </ContentPage>
+
+
+
+
+    </TabbedPage.Children>
+</TabbedPage>

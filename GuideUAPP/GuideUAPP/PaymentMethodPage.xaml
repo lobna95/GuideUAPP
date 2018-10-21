@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="True"
+             x:Class="GuideUAPP.PaymentMethodPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.ColumnSpan="3" FontSize="Medium" Text="Payment Method" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" x:Name="CardNumber" Placeholder="Card number"></Entry>
+        <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" x:Name="CardHolderName" Placeholder="Card holder name"></Entry>
+        <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Text="Expiry Date"></Label>
+        <StackLayout Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Entry Grid.Column="1" Placeholder="YYYY"></Entry>
+            <Entry Grid.Column="2" Placeholder="MM"></Entry>
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" >
+            <Image x:Name="cvvIcon" Grid.Column="1" WidthRequest="30" HeightRequest="10"></Image>
+            <Entry Grid.Column="2" Grid.ColumnSpan="2" Placeholder="XXX"></Entry>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3">
+
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Text="&#xf1f0;" BackgroundColor="Transparent">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String"
+                            Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                            iOS="Font Awesome 5 Free" 
+                            WinPhone="Assets/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free" />
+                </Label.FontFamily>
+            </Label>
+            <Label Grid.Column="3" Text="&#xf1f1;" BackgroundColor="Transparent">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String"
+                            Android="Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free Solid" 
+                            iOS="Font Awesome 5 Free" 
+                            WinPhone="Assets/Font Awesome 5 Free-Solid-900.otf#Font Awesome 5 Free" />
+                </Label.FontFamily>
+            </Label>
+
+
+        </StackLayout>
+        <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3"  Text="Save" WidthRequest="200" HeightRequest="40"
+                   TextColor="#FF1076DC" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="#FFFFE7A6" CornerRadius="10"></Button>
+
+
+    </Grid>
+
+</ContentPage>

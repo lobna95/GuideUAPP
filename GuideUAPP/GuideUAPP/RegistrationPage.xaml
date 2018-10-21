@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="GuideUAPP.RegistrationPage">
+
+    <ScrollView>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="16*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="27*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Image x:Name="logo" Grid.Column="1" Grid.Row="1"  WidthRequest="50" HeightRequest="50"></Image>
+                <Label Text="New user"  Grid.Row="1" VerticalOptions="Center" Grid.Column="2" TextColor="#FF1076DC" FontSize="12"></Label>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Grid.Row="3" Grid.RowSpan="9" Grid.Column="1" Grid.ColumnSpan="3">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
+                    <Entry x:Name="FName" Grid.Row="3" Placeholder="First Name" TextColor="#FF1076DC"></Entry>
+                    <Entry x:Name="LName" Grid.Row="3" Placeholder="Last Name" TextColor="#FF1076DC"></Entry>
+                </StackLayout>
+                <Entry x:Name="UsernameText" Grid.Row="4" Placeholder="Username" TextColor="#FF1076DC"></Entry>
+                <Entry x:Name="EmailText" Grid.Row="5" Placeholder="Email" TextColor="#FF1076DC"></Entry>
+                <Entry x:Name="PhoneNumberText" Keyboard="Numeric" Grid.Row="6" Placeholder="Phone Number" TextColor="#FF1076DC"></Entry>
+                <Entry x:Name="PasswordText" Grid.Row="7" Placeholder="Password" TextColor="#FF1076DC" IsPassword="True"></Entry>
+                <Entry x:Name="ConfirmPasswordText" Grid.Row="8" Placeholder="Confirm Password" TextColor="#FF1076DC" IsPassword="True"></Entry>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Label Grid.Row="9"  Text="Date of Birth" ></Label>
+                    <DatePicker Grid.Row="9" x:Name="DOBText" >
+                    </DatePicker>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3">
+                    <Picker x:Name="gender" Grid.Row="10" TextColor="Gray">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Choose gender</x:String>
+                                <x:String>Female</x:String>
+                                <x:String>Male</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                        <Picker.SelectedIndex>0</Picker.SelectedIndex>
+
+                    </Picker>
+                    <Entry Grid.Row="10" Placeholder="Country" x:Name="CountryText"></Entry>
+                    <Entry Grid.Row="10" Placeholder="City" x:Name="CityText"></Entry>
+                </StackLayout>
+
+                <Button x:Name="ResgisterationBtn" Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2" Text="Register"
+                BackgroundColor="#FFFFE7A6" TextColor="#FF1076DC" HorizontalOptions="Center"
+                VerticalOptions="Center" CornerRadius="10" WidthRequest="200" HeightRequest="40"
+                Clicked="ResgisterationBtn_ClickedAsync"></Button>
+            </StackLayout>
+
+
+
+
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

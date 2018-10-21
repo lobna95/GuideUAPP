@@ -1,0 +1,2 @@
+D:\SIH\GuideUAPP\GuideUAPP\GuideUAPP.Android\obj\Debug\MonoAndroid70\GuideUAPP.Android.csprojAssemblyReference.cache
+D:\SIH\GuideUAPP\GuideUAPP\GuideUAPP.Android\obj\Debug\MonoAndroid70\res.flag
